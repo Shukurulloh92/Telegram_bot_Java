@@ -1,0 +1,33 @@
+SELECT subject.name, question.id, question.name, text,
+variant1, variant2, variant3, variant4, correct_variant, ball, conclusion
+FROM question, subject
+where subject_id=subject.id
+group by question.id, subject.id
+having question.id=1
+order by id asc;
+
+
+SELECT subject.name, question.id, question.name, text,
+variant1, variant2, variant3, variant4, correct_variant, ball, conclusion
+FROM question, subject
+where subject_id=subject.id and subject.name='Java Basics 2' and question.id=11
+order by question.id asc;
+
+
+SELECT correct_variant FROM question, subject
+where subject_id=subject.id and subject.name = 'Java Basics 1'
+and question.id = 10;
+
+SELECT question.id, correct_variant, ball FROM question, subject
+where subject_id=subject.id and subject.name = 'Java Basics 1'
+limit 11
+
+SELECT name FROM subject
+ORDER BY id;
+
+SELECT * FROM users
+ORDER BY id;
+
+insert into users (user_id, first_name, last_name, role, phone_number,
+                   current_query, current_subject, current_test_number, they_answer)
+values (1065114485, 'Shahzod', 'Abdullayev', 'USER', '+998946612591', null, null, null, null);
